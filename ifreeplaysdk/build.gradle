@@ -31,8 +31,8 @@ repositories {
     }
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //implementation(name: 'line-sdk-4.0.6', ext: 'aar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation(name: 'line-sdk-4.0.6', ext: 'aar')
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.+'
@@ -43,4 +43,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //implementation files('libs/lineSdk.jar')
 }
