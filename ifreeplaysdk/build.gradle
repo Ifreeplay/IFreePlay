@@ -32,7 +32,7 @@ repositories {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation(name: 'line-sdk-4.0.6', ext: 'aar')
+    //implementation(name: 'line-sdk-4.0.6', ext: 'aar')
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.+'

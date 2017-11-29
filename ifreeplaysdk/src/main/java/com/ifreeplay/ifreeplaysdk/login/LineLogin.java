@@ -1,3 +1,4 @@
+/*
 package com.ifreeplay.ifreeplaysdk.login;
 
 import android.app.Activity;
@@ -20,9 +21,11 @@ import com.linecorp.linesdk.auth.LineLoginApi;
 import com.linecorp.linesdk.auth.LineLoginResult;
 
 
+*/
 /**
  * Created by gaowe on 2017/7/19.
- */
+ *//*
+
 
 public class LineLogin {
 
@@ -83,7 +86,8 @@ public class LineLogin {
             Log.e("ERROR", e.toString());
         }
 
-        /*if(logOutView!=null){
+        */
+/*if(logOutView!=null){
             logOutView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -95,7 +99,8 @@ public class LineLogin {
                     mLineLogOutStateListener.OnLogOutListener(isLogOut,"line");
                 }
             });
-        }*/
+        }*//*
+
     }
 
     public void logOut(){
@@ -128,9 +133,11 @@ public class LineLogin {
     private void fetchUserInfo(LineLoginResult result) {
         User user = new User();
         try {
-            /*if (result.getLineProfile()!=null){
+            */
+/*if (result.getLineProfile()!=null){
             user.setLineProfile(result.getLineProfile().toString());
-            }*/
+            }*//*
+
             if (result.getLineProfile().getDisplayName()!=null){
                 user.setUserName(result.getLineProfile().getDisplayName());
             }
@@ -140,9 +147,11 @@ public class LineLogin {
             if (result.getLineProfile().getPictureUrl()!=null){
                 user.setHeadPortraitUrl(result.getLineProfile().getPictureUrl().toString());
             }
-            /*if (result.getLineCredential().getAccessToken().getAccessToken()!=null){
+            */
+/*if (result.getLineCredential().getAccessToken().getAccessToken()!=null){
                 user.setAccessToken(result.getLineCredential().getAccessToken().getAccessToken());
-            }*/
+            }*//*
+
 
 
             //此时调接口生成player
@@ -172,3 +181,4 @@ public class LineLogin {
 
 
 }
+*/
