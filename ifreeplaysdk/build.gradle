@@ -23,11 +23,21 @@ android {
     }
 
 }
-
+repositories {
+    flatDir {
+        dirs 'libs' // aar目录
+    }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation(name: 'line-sdk-4.0.6', ext: 'aar')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.+'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
+    implementation 'com.zhy:okhttputils:2.6.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
