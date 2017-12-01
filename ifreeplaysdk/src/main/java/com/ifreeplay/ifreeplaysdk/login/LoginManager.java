@@ -61,7 +61,7 @@ public  class LoginManager {
      */
     public void setFaceBookLoginParams(Activity activity, String arrarPermission, LogInStateListener loginstateListener){
         fbUtil.SetFaceBookLoginActivity(activity);
-        fbUtil.SetFaceBookReadPermission(arrarPermission);
+        //fbUtil.SetFaceBookReadPermission(arrarPermission);
         fbUtil.SetOnFaceBookLoginStateListener(loginstateListener);
         fbUtil.open();
     }

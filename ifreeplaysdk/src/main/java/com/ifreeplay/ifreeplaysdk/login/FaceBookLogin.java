@@ -61,13 +61,13 @@ public class FaceBookLogin {
         }
     }
 
-    public  void SetFaceBookReadPermission(String array){
+   /* public  void SetFaceBookReadPermission(String array){
         if(array==null){
             permissions= Arrays.asList("public_profile");
         }else{
             permissions= Arrays.asList(array);
         }
-    }
+    }*/
 
     public  void SetOnFaceBookLoginStateListener(LogInStateListener LoginStateChanged){
         if(LoginStateChanged==null){
@@ -85,7 +85,7 @@ public class FaceBookLogin {
         FacebookSdk.sdkInitialize(loginActivity);
         callbackManager = CallbackManager.Factory.create();
         com.facebook.login.LoginManager.getInstance().registerCallback(callbackManager, callback);
-        com.facebook.login.LoginManager.getInstance().logInWithReadPermissions(loginActivity,permissions);
+        com.facebook.login.LoginManager.getInstance().logInWithReadPermissions(loginActivity,Arrays.asList("public_profile"));
 
         /*if(logOutView!=null){
             logOutView.setOnClickListener(new View.OnClickListener() {
@@ -129,9 +129,7 @@ public class FaceBookLogin {
     }
 
     private void fetchUserInfo(AccessToken accessToken){
-        GraphRequest request = GraphRequest.newMeRequest(
-                accessToken,
-                new GraphRequest.GraphJSONObjectCallback() {
+        GraphRequest request = GraphRequest.newMeRequest(accessToken,new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject object,
                                             GraphResponse response) {
@@ -167,10 +165,14 @@ public class FaceBookLogin {
                                 if (object.getString("name")!=null){
                                     user.setUserName(object.getString("name"));
                                 }
-                                if (object.getString("picture")!=null){
+                                /*if (object.getString("picture")!=null){
                                     user.setHeadPortraitUrl(object.getString("picture"));
-                                }
-
+                                }*/
+                                //获取用户头像
+                                /*JSONObject object_pic = object.optJSONObject( "picture" ) ;
+                                JSONObject object_data = object_pic.optJSONObject( "data" ) ;
+                                String photo = object_data.optString( "url" )  ;
+                                user.setHeadPortraitUrl(photo);*/
                                 //此时调接口生成player
                                 Credential credential = new Credential();
                                 credential.setGameId(mGameId);
